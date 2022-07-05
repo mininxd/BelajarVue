@@ -5,14 +5,7 @@
 <meta name="theme-color" content="#121212">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--Import Vue-->
-<script type="importmap">
-  {
-    "imports": {
-      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-    }
-  }
-</script>
-
+<script src="https://unpkg.com/vue@3"></script>
 <body class="body">
 
 
@@ -25,7 +18,7 @@ Hasilnya ==> <p :style="{ color }"> {{msg}}<br>{{msg2}}</p>
  <!--                                                    += ini javascript expresion untuk nambah string     -->
 <button class="btn btn-raised btn-secondary" @click="msg += '?'">tambah '?'</button> 
 <br>
-	<button class="btn btn-raised btn-warning" @click="alertbox()">Munculkan Allert</button> 
+	<button class="btn btn-raised btn-warning" @click="alertbox()">Munculkan Alert</button> 
 <br><!--                                                ++ = menambah +1              -->
 <button class="btn btn-raised btn-primary" @click="angka++">Tambah</button> 
 <button class="btn btn-raised btn-secondary" @click="angka += '0'">+1 digit</button>
@@ -142,6 +135,7 @@ Hasilnya ==> <p :style="{ color }"> {{msg}}<br>{{msg2}}</p>
 	.btn-green {
 		background-color: #4CAF50;
 	}
+	.btn-warning{color:#000;}
 	input, select {color:#121212;}
 	input {padding:2px;}
 	i {color:#fff; opacity:0.7; font-size:12px;}

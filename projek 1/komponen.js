@@ -1,15 +1,11 @@
-import { createApp } from 'vue'
-  
-
-  
-  //variabel 
-  const aplikasi = createApp({
+ const { createApp } = Vue
+ createApp({
  data() {
  	//output 
  	return {
  	//string
        msg:'Hello World',
-       msg2:'msg itu message',
+       msg2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       color: 'green',
       togglelist: 'sembunyikan',
       namamu: '',
@@ -42,7 +38,7 @@ import { createApp } from 'vue'
 },
     //@click=""
     alertbox() {
-    	alert(this.msg)
+    	alert(this.msg + ' ' + this.msg2)
     },
     //@click.prevent=""
     dilarang() {
@@ -54,6 +50,4 @@ import { createApp } from 'vue'
     }
     }
 
-})
-//variabel di mount ke ID <div>
-aplikasi.mount('#app-test')
+}).mount('#app-test')
