@@ -1,1 +1,69 @@
- 
+<script>
+		//Javascript untuk hide teks petunjuk ketika diklik "tambah"
+		function fungsi() {
+  var howto = document.getElementById("howto");
+  if (howto.style.display = "block") {
+    howto.style.display = "none";
+  } 
+}
+		</script>
+		<!--importing Vue-->
+	<script type="importmap">
+		{
+  "imports": {
+    "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es/+esm",
+    "vue": "https://unpkg.com/vue@3.2.37/dist/vue.esm-browser.js",
+    "vue/server-renderer": "https://unpkg.com/@vue/server-renderer@3.2.37/dist/server-renderer.esm-browser.js"
+  }
+}
+		</script>
+	
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!--External CSS-->
+<link rel="stylesheet" href="style.css">
+<!--meta tag-->
+<meta name="theme-color" content="#121212">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Vue module-->
+<script type="module" src="komponen.js"></script>
+
+<!--Vue app-->
+<div id="app">
+	<!--Wadah List-->
+<div class="container">
+	  <!--list-->
+  <transition-group tag="ul" name="fade" class="justify-content-center container">
+    <div v-for="item in items" class="item" :key="item">
+    <input placeholder="masukan teks" class="input" type="name"><button class="btn btn-danger" @click="remove(item)">X</button>
+    </div>
+  </transition-group>
+      </div>
+      
+  <!--Tomhol-->
+  <div class="btn-pos">
+  	<!--Navigasi Bootstrap-->
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <button onclick="fungsi();" id="tambah" class="btn-other" @click="insert">Tambah</button>
+  </li>
+  <li class="nav-item">
+      <button class="btn-other" @click="decrease">Kurang</button>
+  </li>
+  <li class="nav-item">
+    <button class="btn-other" @click="reset">Hapus Semua</button>
+  </li>
+  <li class="nav-item">
+    <button class="btn-other" @click="shuffle">Acak</button>
+  </li>
+</ul>
+</div>
+
+  <center>
+  	<!--Teks petunjuk-->
+<p id="howto" class="howto">Pencet tambah untuk mulai</p>
+</center>
+  
+</div>
