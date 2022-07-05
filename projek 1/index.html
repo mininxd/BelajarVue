@@ -4,6 +4,7 @@
 
 <meta name="theme-color" content="#121212">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Import Vue-->
 <script type="importmap">
   {
     "imports": {
@@ -16,67 +17,78 @@
 
 
 <div id="app-test">
-		<!--mengambil "msg" dari vue-->
+		<!--{{ }} = mengambil string-->
 Hasilnya ==> <p :style="{ color }"> {{msg}}<br>{{msg2}}</p>
+<!--                                         @click sama seperti onClick                  -->
 <button class="btn btn-raised btn-secondary" @click="balik()">Balik teks</button> 
 <button class="btn btn-raised btn-secondary" @click="gantiwarna()">ubah warna</button> 
+ <!--                                                    += ini javascript expresion untuk nambah string     -->
 <button class="btn btn-raised btn-secondary" @click="msg += '?'">tambah '?'</button> 
 <br>
 	<button class="btn btn-raised btn-warning" @click="alertbox()">Munculkan Allert</button> 
-<br>
+<br><!--                                                ++ = menambah +1              -->
 <button class="btn btn-raised btn-primary" @click="angka++">Tambah</button> 
 <button class="btn btn-raised btn-secondary" @click="angka += '0'">+1 digit</button>
-<button class="btn btn-raised btn-secondary" @click="angka = '0'">reset</button>
+<!--                                                      "=" untuk merubah pada value/isi/jumlah       -->
+<button class="btn btn-raised btn-secondary" @click="angka = '0'">reset</button>             
+<!--                                                   -- = Mengurangi -1           -->
 <button class="btn btn-raised btn-danger" @click="angka--">Kurang</button>
-
+                       
+<!--                 mengambil value angka di komponen.js              -->
 <div class="total-angka">{{angka}}</div>
+<!--                               @click.prevent, prevent adalah expression javascript larangan-->
 <a href="https://mininproject.xyz" @click.prevent="dilarang">Click to Continue</a>
+
+<!--                               Boolean ? True : False                -->
 <p id="test">iya? atau tidak? : {{ msg ? 'iya' : 'tidak' }}</p>
 
 
 
-                                      <!--tanda seru "!" adalah lawan boolean true false-->
+<!--UL List pakai Vue-->
+	<i>*UL List pakai Vue</i>
+                  <br>   <!--                 tanda seru "!" adalah lawan boolean true false-->
 <button class="btn btn-secondary" @click="show = !show"><span @Click="toggleList()">{{togglelist}}</span></button>
   <button class="btn btn-secondary" @click="list.pop()">-1</button>  <!--pop untuk mengurangi-->
   <button class="btn btn-secondary" @click="list.push(list.length + 1)">+1</button> <!--push untuk menambah-->
+<!--  	                                        Reverse untuk membalik-->
  <button class="btn btn-secondary" @click="list.reverse()">Balik Daftar</button>
 
-
-<!--show=true, list[...array...]-->
+<!--show=true, list[...array...] ==> dari komponen.js-->
 <ul v-if="show && list.length">
 	<!--item dari list-->
     <li v-for="item of list">{{ item }}</li>
   </ul>
+ <br><br>
  
  
  
  
- 
+ <!--Contoh tambahan-->
  <h2>Cheat</h2>
-  <input type="checkbox" value="Auto Eat" v-model="checkedNames">
+  <input type="checkbox" value="Auto Eat" v-model="cheatCode">
   <label for="jack">Auto Eat</label>&nbsp;
-  <input type="checkbox" value="Unlimited Money" v-model="checkedNames">
+  <input type="checkbox" value="Unlimited Money" v-model="cheatCode">
   <label for="john">Unlimited Money</label>&nbsp;
-  <input type="checkbox" value="Infinite Food" v-model="checkedNames">
+  <input type="checkbox" value="Infinite Food" v-model="cheatCode">
   <label for="mike">Infinite Food</label>&nbsp;
-  <p>Cheats Active: <pre>{{ checkedNames }}</pre></p>
+  <p>Cheats Active: <pre>{{ cheatCode }}</pre></p>
 
   <h2>Masukan nama kamu</h2>
-  <input v-model="text">
-<h3>{{'halo, ' + text }}</h3>
+  <input v-model="namamu">
+<h3>{{'halo, ' + namamu }}</h3>
  
 <br>
   <h2>Pilih ruang makan</h2>
-  <input type="radio" value="Standard" v-model="picked">
+  <input type="radio" value="Standard" v-model="terpilih">
   <label for="one">Standard</label>
   <br>
-  	 <input type="radio" value="Backroom" v-model="picked">
+  	 <input type="radio" value="Backroom" v-model="terpilih">
   <label for="two">Backroom</label>
   <br>
-  	<input type="radio" value="Limbo" v-model="picked">
+  	<input type="radio" value="Limbo" v-model="terpilih">
   <label for="two">Limbo</label>
   <br>
-  <span>Ruangan Kamu : {{ picked }}</span>
+  <span>Ruangan Kamu : {{ terpilih }}</span>
   
   <br><br>
      <h2>Pilih Bumbu</h2>
@@ -91,11 +103,12 @@ Hasilnya ==> <p :style="{ color }"> {{msg}}<br>{{msg2}}</p>
   <span>Bumbu kamu : {{ selected }}</span>
 <br><br>
 
-  <h2>Pilih Menu </h2>
+  <h2>Pilih Makanan </h2>
   <select v-model="multiSelected" multiple style="width:100px">
     <option>Bakso</option>
     <option>Mie Ayam</option>
-    <option>Es Teh</option>
+    <option>Seblak</option>
+    <option>Martabak</option>
   </select><br>
   <span>Pesananmu:<br> {{ multiSelected }}</span>
 </div>
@@ -110,6 +123,7 @@ Hasilnya ==> <p :style="{ color }"> {{msg}}<br>{{msg2}}</p>
 
 
 
+<!--CSS-->
 <style>
 	* {padding:2px;
  user-selection:none;
@@ -130,6 +144,7 @@ Hasilnya ==> <p :style="{ color }"> {{msg}}<br>{{msg2}}</p>
 	}
 	input, select {color:#121212;}
 	input {padding:2px;}
+	i {color:#fff; opacity:0.7; font-size:12px;}
 </style>
 
 
