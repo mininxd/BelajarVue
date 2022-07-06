@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro&family=Titillium+Web:ital,wght@1,200&display=swap');
+
+* {
+	font-family: 'Kantumruy Pro', sans-serif;
+color:#fff;
+z-index:10;
+outline:0;
+}
+.info-pos {
+	display:block;
+	z-index:10;
+	position:fixed;
+	left:2em;
+	top:1em;
+	}
+.info {
+	font-family: 'Titillium Web', sans-serif;
+	font-size:50px;
+	opacity:0.5;
+	color:#fff;
+	text-align:center;
+	}
+textarea { 
+	font-size:20px;
+	margin:5px 0 0 0;
+	width:100%;
+	height:80%;
+	overflow:auto;
+	position:relative;
+	color:#fff;
+	padding: 3px;
+	border:0;
+	outline:0;
+	background:transparent;
+	}
+.container {
+	overflow:scroll;
+	color:#fff;
+height:80%;
+ border:0;
+ width:100%;
+}
+body, .body { 
+	background-color:#121212;
+	}
+.btn-balik {
+	position:fixed;
+	bottom:1em;
+	right:1em;
+	width : 60px;
+	height: 60px;
+	border-radius:1000px;
+	}
+.btn-copy {
+	position:fixed;
+	bottom:85px;
+	right:1em;
+	width : 60px;
+	height: 60px;
+	border-radius:1000px;
+	}
+	}
+	
