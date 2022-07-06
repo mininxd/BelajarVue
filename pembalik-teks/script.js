@@ -10,9 +10,8 @@ function copy() {
 	var txt = document.getElementById("txtarea");
 	txt.select();
   txt.setSelectionRange(0, 99999999); 
-   
   navigator.clipboard.writeText(txt.value);
-	
+	document.execCommand('copy');
 	Toastify({
   text: "Text Tercopy",
   duration: 2000,
